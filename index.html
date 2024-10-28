@@ -12,10 +12,24 @@
 
 <body>
     <div id="app">
-        <h1>Product goes here</h1>
+        <div class="nav-bar"></div>
+        <div class="cart">
+            <h2>Cart</h2>
+            <ul>
+                <li v-for="(quantity, id) in cart" :key="id">
+                    Product ID: {{ id }} - Quantity: {{ quantity }}
+                </li>
+            </ul>
+        </div>
+        <product-display :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeCart"></product-display>
     </div>
 
+
     <!-- Import Js -->
+    <script src="./components/productDisplay.js"></script>
+    <script src="./components/productDetails.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
     <script src="./main.js"></script>
 </body>
 
